@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>adhiyagya</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<style type="text/css">
+		.navbar{
+			height: 100px;
+		}
+	</style>
+</head>
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 150px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="1.jpg" height="80px">
+      </a>
+    </div>
+  </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+
+    
+      
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>
+
+
+<form>
+please choose a centre : <select>
+  
+  <option>Sarita Vihar</option>
+  <option>Faridabad</option>
+</select>
+<br>
+enter password : <nbsp><nbsp><input type="password" name="">
+</form>
+
+    </p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+      <!-- <button type="button" class="btn btn-default navbar-btn" ng-model="myVar" ng-click="myFunc()">Sign in</button>
+<div ng-if="myVar" >
+<p>Select a centre :</p>
+<form name="form">
+	<input type="radio" name="r1"   ng-model="myVar1.value" ng-value="1" onclick="fun()">Sarita Vihar<br>
+	<input type="radio" name="r1"   ng-model="myVar1.value" ng-value="2" onclick="fun()">Faridabad<br>
+	<input type="radio" name="r1"   ng-model="myVar1.value" ng-value="3">Other<br>  
+
+</form>
+<hr>
+<p> value is : {{myVar1.value}}</p>
+</div>
+<div ng-if="myVar1.value">
+<p>Enter the password :</p>
+<input type="password" name="password">
+</div>
+
+<div ng-if="myVar2">
+<p>Enter the password :</p>
+<input type="password" name="password">
+</div>
+
+<div ng-if="myVar3">
+<p>Enter the password :</p>
+<input type="password" name="password">
+</div> -->
+<!-- <script>
+function fun() {
+  // body...
+  if(form.elements[0].checked)
+    window.alert("1");
+  else
+    window.alert("2");
+}
+
+angular.module('myApp', [])
+.controller('myCtrl', ['$scope', function($scope) {
+   // $scope.count = 0;
+   
+    $scope.myFunc = function() {
+        $scope.myVar=true;
+        $scope.myVar1={
+            value : 0
+        }
+        // $scope.myVar2=false;
+        // $scope.myVar3=false;
+    };
+    // $scope.myFunc1 = function(){
+    // 	$scope.myVar1={
+    //     value:1
+    //   };
+    // };
+
+    //  $scope.myFunc2 = function(){
+    //   $scope.myVar2=true;
+    // }
+
+    //  $scope.myFunc3 = function(){
+    //   $scope.myVar3=true;
+    // }
+}]);
+</script> -->
+
+</body>
+</html>
