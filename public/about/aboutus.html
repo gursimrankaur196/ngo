@@ -1,0 +1,279 @@
+<head>
+  
+<script src="/javascripts/fontawesome.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    
+<!-- dev URL -->
+<script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
+<script src="/js/jquery.table2excel.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Capriola|Dancing+Script|Indie+Flower|Satisfy" rel="stylesheet">
+
+<style type="text/css">
+  
+table{
+  border:1px solid black; 
+  width: 80%;
+}
+th{
+height: 50px ;padding: 15px;
+}
+tr{
+
+}
+td{
+border:1px solid black; padding: 15px;
+}
+caption{
+  font-weight: bold;
+  align-content: center;
+  text-align: center;
+  font-family: 'Capriola', sans-serif;
+  color:black;
+}
+.info{
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 45px;
+ }
+ .info1{
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 80px;
+  color:red;
+ }
+ .btn2{  /*color : rgb(49, 46, 46);
+  background-color: rgba(255, 222, 121, 0.96);*/
+  background-color: #3b8ec2;
+  border-radius: 8px;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+}
+.btn2:hover, .jumbotron:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btn2:hover span {
+  padding-right: 25px;
+}
+.btn2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ body { 
+    background-image: url("../images/minion1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 5000px;
+    background-position: right center; 
+}
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+.blue    { background-color: #3b8ec2; }
+.blue select    { color: black; }
+.jumbotron{
+  display: inline-block;
+  /*background-color:#ffff8d;*/
+  width: 400px;
+  /*height: 300px;*/
+  border:4px solid black;
+  margin-top: 30px;
+  /*display: inline-block;*/
+}
+tr:nth-child(even){background-color: #aed581}
+ tr:nth-child(odd){background-color: white;}
+
+th{
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+</head>
+
+<body>
+  <div style="margin-left: 50px;">
+<md-input-container class="md-block" layout-xs="column" flex-gt-sm style="min-width:400px;">
+<p class="info">Select a subject:</p>
+<div class="styled-select blue semi-square">
+   <select ng-model="subject_selected">Choose Subject
+        <option  ng-repeat="list in subject_list">
+              {{list}}
+        </option>
+    </select>
+    </div>
+</md-input-container>
+
+<div class="jumbotron">
+<p class="info1" style="font-size: 30px; padding-left: 10px;">For Student Attendance:</p>
+<md-input-container class="md-block" layout-xs="column" flex-gt-sm style="min-width:400px;">
+  <p class="info" style="font-size: 25px;">Select a batch:</p>
+  <div class="styled-select blue semi-square">
+    <select ng-model="batch_selected" ng-click="get_batches()">Choose Batch
+        <option class="styled-select yellow rounded" ng-repeat="list in batch_list">
+              {{list}}
+        </option>
+    </select>
+    </div>
+</md-input-container>
+
+<!-- <md-button class="md-raised md-primary" ng-if="s>0" onClick="tableToExcel()"><i class="fa fa-plus" aria-hidden="true"></i>Export to excel</md-button>
+ -->
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">  <!-- toggling student and volunteer attendance as an accordian -->
+ 
+
+  <!-- <div class="panel panel-default"> -->
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+<md-button class="btn2"  ng-click="get_student_attendance()" class="collapsed" type="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-child fa-2x" aria-hidden="true" ></i>Student</md-button></h4></div>
+</div>
+</div>
+<!-- </div> -->
+<!-- <span ng-show="subject_selected" >  batch select field is hidden
+  <div>Batch :</div>  
+  <select id="batch" name="batch" multiple="multiple" >
+  </select> 
+</span> -->
+<div class="jumbotron" style="padding-bottom: 73px; margin-left : 50px;">
+<p class="info1" style="font-size: 30px;  padding-left: 10px;" >For Volunteer Attendance:</p>
+<!-- <div class="panel panel-default"> -->
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+<md-button class="btn2"  ng-click=get_volunteer_attendance() class="collapsed" type="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Volunteer</md-button></h4></div>
+</div>
+<!-- </div>
+ -->
+
+<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+
+<div ng-if="student_list.length > 0" >
+<form style="overflow-x:scroll">
+<table id="resultTable" style="width: 100%">    
+  <!-- style="width: 100%" -->
+<caption>Student Attendance</caption>
+<tr>
+<th ng-if="add_student_attendance > 0"></th>
+<th ng-repeat='(key,val) in student_list[0]'>{{key}}</th>
+</tr>
+  <tr ng-repeat='x in student_list'>
+  <td ng-if="add_student_attendance > 0" ><input type="checkbox"  name="check_student_attendance" value={{x.s_id}}></td>
+  <td  ng-repeat="(key,val) in x">{{val}}</td>
+  </tr>
+
+</table>
+</form>
+
+<md-button class="md-raised md-primary" ng-if="add_student_attendance>0" ng-click="submit_student_attendance()"><i class="fa fa-check" aria-hidden="true"></i>submit</md-button>
+<md-button class="md-raised md-primary" ng-if="s>0" ng-click=add_new_student_col()><i class="fa fa-plus" aria-hidden="true"></i>add attendance</md-button>
+
+</div>
+</div>
+</div>
+<!-- </div> -->
+
+<!-- <button onClick="tableToExcel()" >export</button> -->
+
+
+<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+<div ng-if="volunteer_list.length > 0"  >
+
+<form style="overflow-x:scroll">
+<table id="volunteer_table"  class="responstable" style="width: 100%" >
+<caption>Volunteer Attendance  **Only centre admin can add attendance of volunteers</caption><tr>
+<th ng-if="add_volunteer_attendance > 0" >
+<th  ng-repeat='(key,val) in volunteer_list[0]'>{{key}}</th>  <!-- displays the headings of the table -->
+</tr>
+
+
+  <tr ng-repeat='x in volunteer_list'>
+  <td ng-if="add_volunteer_attendance > 0" > <input type="checkbox"  name="check_volunteer_attendance" value={{x.v_id}}></td>
+
+ <td  ng-repeat="(key,val) in x">{{val}}</td>
+
+  </tr>
+</table>
+</form>
+
+<md-button class="md-raised md-warn" ng-if="add_volunteer_attendance > 0" ng-click="submit_volunteer_attendance()"><i class="fa fa-check" aria-hidden="true"></i>
+Submit</md-button>
+<md-button class="md-raised md-warn" ng-if="s2>0" ng-click=add_new_volunteer_col()><i class="fa fa-plus" aria-hidden="true"></i>
+Add Attendance</md-button>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</span>
+</div>
+</body>
+
+ <!-- <script type="text/javascript">
+     
+     function tableToExcel(){
+        console.log("calling function");
+        ResultsToTable();
+        console.log("function returned");
+    }
+    
+    function ResultsToTable(){    
+      console.log("inside function");
+        $("#resultsTable").table2excel({
+            // exclude: ".noExl",
+            name: "Results"
+        });
+        console.log("going back");
+    }
+
+
+
+
+// $(document).ready(function () {
+//         $("#btnExport").click(function () {
+//             $("#tblExport").btechco_excelexport({
+//                 containerid: "tblExport"
+//                , datatype: $datatype.Table
+//             });
+//         });
+//     });
+</script> -->

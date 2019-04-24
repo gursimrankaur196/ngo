@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    
+<!-- dev URL -->
+<script src="/js/jquery.table2excel.js"></script>
+<script src="https://rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
+    
+<!-- !!! use this URL for production:
+<script src="https://cdn.rawgit.com/unconditional/jquery-table2excel/master/src/jquery.table2excel.js"></script>
+-->
+    </head>
+<body>
+
+
+    <button onClick="tableToExcel()">Export</button>
+  
+
+    <table id="resultsTable" >
+        
+            <tr><td>This shouldn't get exported</td><td>This shouldn't get exported either</td></tr>
+            <tr><td>This Should get exported as a header</td><td>This should too</td></tr>
+               
+            <tr><td>data1a</td><td>data1b</td></tr>
+            <tr><td>data2a</td><td>data2b</td></tr>
+        
+            <tr><td colspan="2">This footer spans 2 cells</td></tr>
+        
+    </table>
+    <script type="text/javascript">
+      function tableToExcel(){
+        console.log("calling function");
+        ResultsToTable();
+        console.log("function returned");
+    }
+    
+    function ResultsToTable(){    
+      console.log("inside function");
+        $("#resultsTable").table2excel({
+            // exclude: ".noExl",
+            name: "Results"
+        });
+        console.log("going back");
+    }
+
+    </script>
+    </body>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="src/jquery.table2excel.js"></script>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  $("#btn").click(function(){
+  $(".table").table2excel({
+    // exclude CSS class
+    name: "Worksheet Name",
+    filename: "SomeFile" //do not include extension
+  }); 
+});
+</script>
+<table class="table table-bordered">
+  <tr>
+  <th>name</th>
+  <th>roll no.</th>
+  <th>student</th>
+  </tr>
+  <tr>
+    <td>hello</td>
+    <td>4</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>hell</td>
+    <td>5</td>
+    <td>8</td>
+  </tr>
+</table>
+<button id="btn">Export</button>
+</body>
+</html>
+ -->

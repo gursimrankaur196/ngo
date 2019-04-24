@@ -1,0 +1,169 @@
+<head>
+<link href="https://fonts.googleapis.com/css?family=Capriola|Dancing+Script|Indie+Flower|Satisfy" rel="stylesheet"> 
+<style>
+.options{
+   display:inline-block;
+    /*margin: 1px 13px;*/
+    padding-top: 3px;
+}
+.options>a{
+  font-size: 25px;
+  color:black;
+  text-decoration: none;
+  font-kerning: arial;
+}
+.options>a:hover{
+  text-decoration: underline;
+}
+#brand{
+  width:162px;
+  height:70px;
+}
+.aa{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  /*font-family: 'Indie Flower', cursive;*/
+  font-weight: bold;
+  font-family: 'Capriola', sans-serif;
+  /*font-family: 'Dancing Script', cursive;*/
+}
+  nav{
+    background-color: #b4b4b4;
+    text-align: center;
+    padding:8px;
+
+  }
+.navbar{
+  background-color: black;
+}
+.btn1{  /*color : rgb(49, 46, 46);
+  background-color: rgba(255, 222, 121, 0.96);*/
+  background-color: #4CAF50;
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 14px 40px;
+  font-size: 30px;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+}
+.btn1:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btn1:hover span {
+  padding-right: 25px;
+}
+.btn1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+./*a1{
+  margin-left: 600px;
+}*/
+
+}
+</style>
+</head>
+<body>
+<!-- <div class="container-fluid"> -->
+<nav class="navbar" id="n">
+ <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="row">
+   
+    <div id="navbar_image" class="col-xs-3 col-sm-3 col-md-2">
+        <a class="navbar-brand" href="#" style="padding-top:0px" >
+          <img id="brand" alt="Brand" src="../images/loginLogo.jpg">
+        </a>
+    </div>
+
+
+    <div id="navbar_text"  class="col-xs-9 col-sm-9 col-md-10">
+    <p class="aa">VOLUNTEER PORTAL</p>
+    </div>
+    </div>
+</div>
+</nav>
+
+
+<div class="container-fluid">
+ 
+
+    <md-button class="options  btn1" ui-sref="app" name="page1"><span>Home</span></md-button>
+    <md-button class="options  btn1" ui-sref="app.page1" name ="page4" style="margin-left: 20px"><span>Attendance</span></md-button>
+    <md-button class="options  btn1" ng-click="logout()" id="a1" style="margin-left: 40px" ><span style="margin-right: 10px;">Logout</span></md-button>
+
+ 
+</div>
+<!-- <md-content class="md-padding" layout="row" layout="center center">
+    <md-nav-bar style="width: 100%" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links"> -->
+    
+
+   <!--  <div class="container">
+      <div class="row">
+        <nav>
+          <ul>
+            <li><a sref="app" name="page1">Home</a></li>
+            <li><a sref="app.page1" name="page4">Attendance</a></li>
+            <li><button ng-click="logout()">Logout</a></button></li>
+          </ul>
+        </nav>
+      </div>
+    </div> -->
+</body>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <span  class="col-xs-3"> -->
+          
+
+          <!-- <md-nav-item class="col-xs-3" md-nav-sref="app" name="page1">Home</md-nav-item> -->
+          
+
+          <!-- </span> -->
+          <!-- <span class="col-xs-5"> -->
+          
+
+          <!-- <md-nav-item class="col-xs-3" md-nav-sref="app.page1" name="page4">Attendance</md-nav-item> -->
+          
+
+          <!-- </span>  -->
+          <!-- <span class="col-xs-4"> -->
+          
+          
+          <!-- <md-button class="col-xs-3" ng-click = "logout()">Logout</md-button> -->
+          
+
+          <!-- </span> -->
+        </div>
+      </div>
+      
+    </md-nav-bar>    
+  </md-content>

@@ -1,0 +1,477 @@
+
+
+ <head>
+ 
+<link href="https://fonts.googleapis.com/css?family=Capriola|Dancing+Script|Indie+Flower|Satisfy" rel="stylesheet">
+<!-- <script type="text/javascript">
+  ("#btn2").onclick(function(){
+    ("#table").focus();
+  })
+</script> -->
+  <style type="text/css">
+    body { 
+    background-image: url("../images/minion.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 5000px;
+    background-position: right center; 
+    /*background-color: green;*/
+}
+
+
+    table {
+    font-family: arial, sans-serif;
+    /*border-collapse: collapse;*/
+    width: 50%;
+    margin: 0 auto;
+    margin-left: 20%;
+}
+
+td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 8px;
+}
+/*.select_subject{
+background-image: url("home/img16.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size:110%;
+height: 200px;
+width:300px;
+align-content: center;
+text-align: center;
+left: 70%;
+ }
+ .show_table_student{
+  background-image: url("home/img15.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+  width: 100%;
+  align-content: center;
+ }*/
+ .styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+    margin: 20px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+caption{
+  font-weight: bold;
+  align-content: center;
+  text-align: center;
+  font-family: 'Capriola', sans-serif;
+}
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+.yellow  { background-color: #eec111;
+border: 2px solid black; }
+.yellow select  { color: #000; }
+
+.btn2{  /*color : rgb(49, 46, 46);
+  background-color: rgba(255, 222, 121, 0.96);*/
+  background-color: #eec111;
+  border-radius: 8px;
+  border: 2px solid black;
+  padding: 12px 28px;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+}
+.btn2:hover, .jumbotron:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.btn2:hover span {
+  padding-right: 25px;
+}
+.btn2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.boundary{
+   margin: 20px;
+ }
+ .jumbotron{
+  display: inline-block;
+  /*background-color:#8c9eff;*/
+  width: 400px;
+  /*height: 300px;*/
+  border:4px solid black;
+  /*top: 400px;*/
+
+ }
+ tr:nth-child(even){background-color: #aed581}
+ tr:nth-child(odd){background-color: white;}
+
+ .info{
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 60px;
+ }
+ .info1{
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  font-size: 40px;
+ }
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    width: 500px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+ </style>
+
+</head>
+ <!-- -->
+ <!-- <head> </head>
+<div  layout="column" ng-cloak class="md-inline-form">
+  <md-content layout-padding>
+    <div layout="column" layout-xs="column" layout-align="center center">
+      <form name="userForm"> -->
+        <!-- <div layout-gt-xs="row">
+            <md-input-container>  -->
+
+<!-- <div class="select_subject">
+<br><br><br><br> -->
+<body>
+<div style="margin-left: 50px;">
+
+<md-input-container class="md-block" layout-xs="column" flex-gt-sm  >
+
+  <p class="info1">Select a subject:</p>
+  <div class="styled-select yellow rounded boundary">
+    <select id="soflow-color" ng-model="subject_selected" ng-click="getallsubjects()">Choose Subject
+        <option  ng-repeat="list in subject_list"> 
+              {{list}}
+        </option>
+    </select></div>
+</md-input-container>
+<!-- </div> -->
+<!-- </div>
+<div class="select_batch"> -->
+<div class="jumbotron">
+<p class="info"  style="font-size: 30px; padding-left: 10px">For Student Information:</p>
+<md-input-container class="md-block" layout-xs="column" flex-gt-sm style="min-width:400px;" >
+ <p class="info1"  style="font-size: 25px; padding-left: 10px"> Select a batch:</p>
+  <div class="styled-select yellow rounded boundary">
+    <select  ng-model="batch_selected" ng-click="get_batches()">Choose Batch
+        <option  ng-repeat="list in batch_list">
+              {{list}}
+        </option>
+    </select>
+    </div>
+</md-input-container>
+<!-- <md-button class="md-raised" ng-click="click()">Volunteer Info</md-button> -->
+<md-button class="btn2" ng-click="click()">Student Info</md-button>
+
+</div>
+<div class="jumbotron" style="right: 200px; margin-left: 50px;"> 
+<p class="info"  style="font-size: 30px; padding-left: 10px">For Volunteer Information:</p>
+<br>
+<md-button class="btn2" ng-click="volunteer()">Volunteer Info</md-button>
+</div>
+<!-- </span>
+<div> -->
+<md-input-container class="md-block show_table_student" layout-xs="column" flex-gt-sm style="min-width:400px; " ng-if="student_list.length > 0" ng-show="show">
+<!-- <br><br><br><br><br><br><br><br><br><br> -->
+<table>
+<caption>Student Information</caption>
+  <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Date Of Joining</th>
+  <th>Address</th>
+  <th>Contact</th>
+  </tr>
+  <tr ng-repeat='x in student_list'>
+  <td>{{x.s_id}}</td>
+  <!-- <script type="text/javascript">
+    var name="/images/3";
+  </script> -->
+  <td><a href="" id="myBtn">{{x.s_name}}</a></td>
+
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <!-- {{x.s_name}} -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <!-- <p> -->
+      <!-- <span> -->
+     <!-- <td>   {{x.s_name}}</td> -->
+      <img id="image" src ="/images/graduated.png">
+    <!-- </span> -->
+    <!-- <span> -->
+     <!-- <td> Name : {{x.s_name}}</td> -->
+      <!-- layout-xs<br>
+      Id   : {{x.s_id}}
+      <br> -->
+    <!-- </span> -->
+
+    <!-- </p> -->
+  </div>
+
+</div>
+<!-- <script type="text/javascript">
+document.getElementById('image').src = "/"*+{{x.s_id}}+".jpg";
+window.alert("/"*+{{x.s_id}}+".jpg");
+</script> -->
+<script type="text/javascript">
+ // var name={{x.s_id}};
+  // Get the modal
+// function motiMerkoDaantTiRehtiHai(var a){
+// return(""+a+".jpg");
+// };
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+// console.log({{x.s_id}});
+//     document.getElementById('image').src = "/"*+{{x.s_id}}+".jpg";
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() {
+
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+} 
+</script>
+  <td>{{x.s_doj}}</td>
+  <td>{{x.address}}</td>
+  <td>{{x.contact}}</td>
+  </tr>
+</table>
+</md-input-container>
+<!-- </div> -->
+
+<md-input-container class="md-block" layout-xs="column" flex-gt-sm style="min-width:400px; " ng-if="volunteer_list.length > 0" ng-show="show1">
+<table>
+<caption>Volunteer Information</caption>
+  <tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Date Of Joining</th>
+  <th>email</th>
+  <th>Contact</th>
+  <th>Address</th>
+  </tr>
+  <tr ng-repeat='x in volunteer_list'>
+  <td>{{x.v_id}}</td>
+  <td><a href="" id="myBtn1">{{x.v_name}}</a></td>
+  <div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <!-- {{x.s_name}} -->
+  <div class="modal-content" style="width: 700px">
+    <span id="close1" class="close">&times;</span>
+    <!-- <p> -->
+      <!-- <span> -->
+     <!-- <td>   {{x.s_name}}</td> -->
+      <img id="image1" src ="/images/teacher.png">
+    <!-- </span> -->
+    <!-- <span> -->
+     <!-- <td> Name : {{x.s_name}}</td> -->
+      <!-- layout-xs<br>
+      Id   : {{x.s_id}}
+      <br> -->
+    <!-- </span> -->
+
+    <!-- </p> -->
+  </div>
+
+</div>
+<!-- <script type="text/javascript">
+document.getElementById('image').src = "/"*+{{x.s_id}}+".jpg";
+window.alert("/"*+{{x.s_id}}+".jpg");
+</script> -->
+<script type="text/javascript">
+ // var name={{x.s_id}};
+  // Get the modal
+// function motiMerkoDaantTiRehtiHai(var a){
+// return(""+a+".jpg");
+// };
+var modal1 = document.getElementById('myModal1');
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var span11 = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn1.onclick = function() {
+    modal1.style.display = "block";
+// console.log({{x.s_id}});
+//     document.getElementById('image').src = "/"*+{{x.s_id}}+".jpg";
+}
+
+// When the user clicks on <span> (x), close the modal
+span11.onclick = function() {
+
+    modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event1) {
+    if (event1.target == modal1) {
+        modal1.style.display = "none";
+    }
+} 
+</script>
+  <td>{{x.v_doj}}</td>
+  <td>{{x.email}}</td>
+  <td>{{x.contact}}</td>
+  <td>{{x.address}}</td>
+  </tr>
+</table>
+</md-input-container>
+</div>
+
+</body>
+<!-- 
+
+<md-input-container class="md-block" flex-gt-sm style="min-width:400px;" ng-if="student_list.length > 0">
+            <label>Students Name</label>
+             <md-list-item md-radio button ng-repeat="student in student_list">
+             <p>{{student.s_id}}  {{student.s_name}}
+             </p>
+             </md-list-item>
+
+            <md-select ng-model="student_list">
+                <md-option ng-repeat="list in student_list" value="{{list.s_id}}">
+                {{list.s_name}}
+                </md-option>
+            </md-select>
+
+          <md-radio-group ng-model="student_list">
+<md-radio-button ng-repeat="d in student_list"  >
+  {{ d.s_name }}
+  <br>
+  </md-radio-button>
+</md-radio-group>
+<br>
+<input type="radio" ng-model="student_list" ng-repeat='list in student_list' value="{{list.s_name}" }>
+{{list.s_name}}
+</input>
+</md-input-container>
+ -->
+
+<!-- 
+        <p ng-if="subject_list.length === 0">No subjects found.</p>
+        <md-input-container class="md-block" layout-xs="column" flex-gt-sm style="min-width:400px;" ng-if="subject_list.length > 0">
+          <label>Subject</label>
+          <md-select ng-model="params.subject_id" ng-change="getAllBatches()">
+            <md-option value=""><em>None</em></md-option>
+            <md-option ng-repeat="list in subject_list" value="{{list.subject_id}}">
+              {{list.subject_name}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <div ng-if="list.batch_show">
+            <p ng-if="batch_list.length === 0">No batches found for the selected subject.</p>                
+            <md-input-container class="md-block" flex-gt-sm style="min-width:400px;" ng-if="batch_list.length > 0">
+            <label>Batch</label>
+            <md-select ng-model="params.batch_id" ng-change="callStudents()">
+                <md-option value=""><em>None</em></md-option>
+                <md-option ng-repeat="list in batch_list" value="{{list.batch_id}}">
+                {{list.batch_name}}
+                </md-option>
+            </md-select>
+            </md-input-container>
+        </div>
+        <p ng-show="list.is_done">Attendance already taken.</p>  
+        <div ng-show="list.show">
+          <md-subheader class="md-no-sticky" ng-show="list.student_show" ng-if="student_list.length === 0 && params.batch_id !== ''">No students found in this batch</md-subheader>
+          <md-list-item ng-repeat="student in student_list">
+            <md-icon ng-show="!student.is_done" md-svg-icon="assets/img/icons/ic_face_black_24px.svg"></md-icon>
+            <md-icon ng-show="student.is_done" md-svg-icon="assets/img/icons/ic_done_black_24px.svg"></md-icon>
+            <p> {{ student.full_name }} </p>
+            <md-switch class="md-secondary" ng-model="student.is_attendance" ng-change="addAttendance(student, $index)"></md-switch>            
+          </md-list-item>                      
+        </div>
+      </div>
+    </form>
+  </div>
+</md-content>
+</div>
+ -->
